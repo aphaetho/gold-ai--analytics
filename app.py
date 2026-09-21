@@ -10,7 +10,7 @@ from stats_service import calculate_statistics
 from ai_service import ask_gold_ai
 
 def get_bg_image():
-    path = Path(__file__).parent / "assets" / "gold-background.png"
+    path = Pathhttps://github.com/aphaetho/gold-ai--analytics/blob/main/gold-background.png?raw=true.parent / "assets" / "gold-background.png"
     return base64.b64encode(path.read_bytes()).decode()
 
 BG_IMAGE = get_bg_image()
