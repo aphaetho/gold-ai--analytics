@@ -11,9 +11,13 @@ from ai_service import ask_gold_ai
 from firebase_auth import register_user, login_user
 
 def get_bg_image():
-    path = Path(__file__).parent / "assets" / "gold-background.png"
-    return base64.b64encode(path.read_bytes()).decode()
-
+    base = Path(__file__).parent
+    for p in (base / "gold-background.png", base / "assets" / "gold-background.png"):
+        if p.exists():
+            return base64.b64encode(p.read_bytes()).decode()
+    print("FILES:", [x.name for x in base.iterdir()])
+    return ""
+    
 BG_IMAGE = get_bg_image()
 
 st.set_page_config(
