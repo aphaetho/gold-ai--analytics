@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 load_dotenv()
-KEY=os.getenv("AQ.Ab8RN6IxaN4Ll3E36rbY6FIC_OO0LnDN1ceAGBrJiQ2jcvUe0w")
+KEY=os.getenv("GEMINI_API_KEY")
 MODEL=os.getenv("GEMINI_MODEL","gemini-3.6-flash")
 def f(v,s=""): return "N/A" if v is None or pd.isna(v) else f"{v:,.4f}{s}"
 def ask_gold_ai(question,period,spot,stats,df):
